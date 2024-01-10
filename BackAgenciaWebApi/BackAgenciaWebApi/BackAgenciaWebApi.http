@@ -1,0 +1,6 @@
+@BackAgenciaWebApi_HostAddress = http://localhost:5160
+
+GET {{BackAgenciaWebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
