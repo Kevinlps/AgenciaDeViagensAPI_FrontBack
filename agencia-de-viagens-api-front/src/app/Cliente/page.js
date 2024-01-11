@@ -1,7 +1,8 @@
 'use client'
-
 import { useEffect, useState } from "react";
 import ClienteCard from "../Components/ClienteCard";
+import styles from '../page.module.css'
+import Link from "next/link";
 
 export default function page() {
     const [clientes, setClientes] = useState([]);
@@ -28,11 +29,19 @@ export default function page() {
       }, []);
 
   return (
-    <div>
+    <div  >
+    <nav className={styles.navBar}>
+        <h1>Agencia de viagens</h1>
+        <button>
+        <Link href="/">Home</Link>
+        </button>
+      </nav>
+    <div className={styles.backimage}>
       <h1>Lista de Clientes</h1>
       {clientes.map((cliente) => (
         <ClienteCard key={cliente.id} cliente={cliente} />
       ))}
+    </div>
     </div>
   )
 }
